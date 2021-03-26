@@ -90,7 +90,7 @@ describe('CGM_CLICKDOC_application_Testing',function(){
                 Name_Input_field.sendKeys(test_name);
                 browser.driver.sleep(1000);
         
-                /*A dropdown is opened with fitting suggestions according to the entered value
+                //A dropdown is opened with fitting suggestions according to the entered value
                 
                 if(dropdown.isPresent()){
                         var name_search_results = element.all(by.xpath('//typeahead-container/button/div[@class="dropdown-item-container ng-star-inserted"]'));
@@ -101,14 +101,14 @@ describe('CGM_CLICKDOC_application_Testing',function(){
                                 }
                         });
                 };
-                */
+                
         
                 //7 Enter further input to refine the search
                 Name_Input_field.clear();
                 var refine_name_input = 'Beate Edel';
                 Name_Input_field.sendKeys(refine_name_input);
                 browser.driver.sleep(1000);
-                /*The provided suggestions are further specified
+                //The provided suggestions are further specified
                 if(dropdown.isPresent()){
                         var name_search_results = element.all(by.xpath('//typeahead-container/button/div[@class="dropdown-item-container ng-star-inserted"]'));
                         name_search_results.then(function(results){
@@ -118,13 +118,13 @@ describe('CGM_CLICKDOC_application_Testing',function(){
                                 }
                         });
                 };
-                */
+                
                 //8 Enter further input for which no results exist
                 var no_exist_name = 'se';
                 Name_Input_field.sendKeys(no_exist_name);
                 browser.driver.sleep(1000);
                 //The suggestion dropdown disappears
-                //expect(dropdown.isPresent()).toBe(false);
+                expect(dropdown.isPresent()).toBe(false);
 
         });
 
